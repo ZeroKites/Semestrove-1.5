@@ -1,0 +1,177 @@
+:root {
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --header-background: #4CAF50;
+    --nav-background: #333;
+    --nav-link-color: white;
+    --nav-link-hover-background: #121212;
+    --nav-link-hover-color: #4CAF50;
+    --box-background: white;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --button-background: #4CAF50;
+    --button-color: #333;
+    --button-hover-background: #45a049;
+    --header-image-light: url('images/image.jpg');
+    --header-image-dark: url('images/image1.jpg');
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background: #333;
+    --nav-background: #1e1e1e;
+    --nav-link-color: white;
+    --nav-link-hover-background: #121212;
+    --nav-link-hover-color: #4CAF50;
+    --box-background: #1e1e1e;
+    --box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    --button-background: #4CAF50;
+    --button-color: white;
+    --button-hover-background: #45a049;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background: var(--header-image-light) no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+[data-theme="dark"] header {
+    background: var(--header-image-dark) no-repeat center center/cover;
+}
+
+nav {
+    background-color: var(--nav-background);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a, nav .nav-button {
+    display: block;
+    color: var(--nav-link-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    flex: 1 1 auto;
+    margin: 5px;
+}
+
+nav a:hover, nav .nav-button:hover {
+    background-color: var(--nav-link-hover-background);
+    color: var(--nav-link-hover-color);
+}
+
+.nav-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #555;
+}
+
+.container {
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.destination {
+    background-color: var(--box-background);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+.destination::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.destination h3 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: var(--nav-background);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.registration-form {
+    background-color: var(--box-background);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registration-form input[type="submit"] {
+    background-color: var(--button-background);
+    color: var(--button-color);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registration-form input[type="submit"]:hover {
+    background-color: var(--button-hover-background);
+}
+
+@media (max-width: 768px) {
+    nav a, nav .nav-button {
+        flex: 1 1 100%;
+    }
+
+    .destination img {
+        max-width: 100%;
+        height: auto;
+    }
+}
